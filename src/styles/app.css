@@ -47,38 +47,80 @@ tspan {
     font-family: sans-serif;
 }
 /*rc-slider spetial for full screen start*/
+/*rc-slider start*/
 .rc-slider {
-    height: 20px !important;
+  position: relative;
+  height: 20px !important;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .rc-slider-rail {
-    height: 10px !important;
+  position: absolute;
+  width: 100%;
+  background-color: rgb(255, 151, 151) !important;
+  height: 10px !important;
 }
 .rc-slider-track {
-    height: 10px !important;
+  position: absolute;
+  left: 0;
+  height: 10px !important;
+  border-radius: 6px;
+  background-color: rgb(125, 214, 214) !important;
 }
 .rc-slider-step {
-    height: 10px !important;
+  position: absolute;
+  width: 100%;
+  height: 10px !important;
+  background: transparent;
 }
 .rc-slider-handle {
-    margin-top: -3px !important;
-    width: 16px !important;
-    height: 16px !important;
+  position: absolute;
+  margin-left: -7px;
+  margin-top: -3px !important;
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer;
+  border-radius: 50%;
+  border: solid 2px rgb(125, 214, 214)!important;
+  background-color: rgb(125, 214, 214)!important;
+}
+.rc-slider-handle:hover {
+  border-color: rgb(125, 214, 214) !important;
 }
 .rc-slider-dot {
-    bottom: 0 !important;
-    margin-left: -6px !important;
-    width: 12px !important;
-    height: 10px !important;
-    border-radius: 5px !important;
-    border: 5px solid rgb(255, 151, 151) !important;
+  position: absolute;
+  cursor: pointer;
+  vertical-align: middle;
+  bottom: 0 !important;
+  margin-left: -6px !important;
+  width: 12px !important;
+  height: 10px !important;
+  border-radius: 5px !important;
+  border: 5px solid rgb(255, 151, 151) !important;
 }
 .rc-slider-dot-active {
-    border-color: rgb(125, 214, 214) !important;
+  border-color: rgb(125, 214, 214) !important;
 }
 .rc-slider-mark {
-    top: 20px !important;
-    font-size: 16px !important;
-    font-family: "Open Sans" !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 20px !important;
+  font-size: 16px !important;
+  font-family: "Open Sans" !important;
+}
+.rc-slider-mark-text {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(213, 213, 213);
+  width: 8% !important;
+  margin-left: -5% !important; 
 }
 /*rc-slider end*/
 /*HEADER start*/
@@ -273,7 +315,7 @@ li:hover {
       display: list-item !important;
       font-family: "Open Sans";
       color: #4b4b4b;
-      font-size: 22px;
+      font-size: 24px;
       text-align: center;
       border-bottom: 1px solid rgb(92, 204, 204);
       margin: 0 auto;
@@ -455,7 +497,7 @@ h2 {
 }
 @media screen and (min-width: 990px) and (max-width: 1200px) {
   .h2-loan {
-      font-size: 20px !important;
+      font-size: 22px !important;
   }
   .loanInformation {
       height: 380px !important;
@@ -470,7 +512,7 @@ h2 {
       width: 160px !important;
   }
   .loanInput_sliderForm_textForm{
-      font-size: 20px !important;
+      font-size: 22px !important;
   }
   .loanInfo_td {
       padding: 11px !important;
@@ -494,7 +536,7 @@ h2 {
 }
 @media screen and (min-width: 770px) and (max-width: 990px) {
   .h2-loan {
-      font-size: 19px !important;
+      font-size: 22px !important;
   }
   .loanInformation {
       width: 100% !important;
@@ -515,13 +557,13 @@ h2 {
       width: 190px !important;
   }
   .loanInput_sliderForm_textForm{
-      font-size: 20px !important;
+      font-size: 24px !important;
   }
   .loanInfo_table, .loanText-block_text {
-      font-size: 18px !important;
+      font-size: 22px !important;
   }
   .loanData_table {
-      font-size: 16px !important;
+      font-size: 19px !important;
   }
   .loanInfo_td {
       padding-left: 20px !important;
@@ -551,7 +593,7 @@ h2 {
       background: rgb(232,252,251) !important;
   }
   .h2-loan {
-      font-size: 18px !important;
+      font-size: 22px !important;
   }
   .loanInformation {
       width: 100% !important;
@@ -575,13 +617,13 @@ h2 {
       width: 190px !important;
   }
   .loanInput_sliderForm_textForm{
-      font-size: 20px !important;
+      font-size: 24px !important;
   }
   .loanInfo_table, .loanText-block_text {
-      font-size: 18px !important;
+      font-size: 22px !important;
   }
   .loanData_table {
-      font-size: 16px !important;
+      font-size: 20px !important;
   }
   .loanInfo_td {
       padding-left: 20px !important;
@@ -630,21 +672,24 @@ h2 {
   }
   /*rc-slider end*/
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 620px) {
     .h2-loan {
-        font-size: 17px !important;
+        font-size: 20px !important;
     }
     .loanInput_sliderForm_textForm_input {
         width: 130px !important;
     }
     .loanInput_sliderForm_textForm{
-        font-size: 18px !important;
+        font-size: 22px !important;
     }
     .loanData_table_header, .black, .white {
         padding: 4px 2px 4px 2px !important;
     }
     .loanInfo_table, .loanText-block_text {
-      font-size: 16px !important;
+      font-size: 19px !important;
+    }
+    .loanData_table {
+      font-size: 18px !important;
     }
 }
 .h2-loan {
