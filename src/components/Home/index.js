@@ -13,7 +13,6 @@ export default class Home extends Component {
         clientWidth = document.documentElement.clientWidth,
         height = clientHeight;
 
-    debugger;
     clientWidth >= 770 ? height -= 50 : null;
 
     if(clientWidth < 1400)

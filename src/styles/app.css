@@ -672,7 +672,7 @@ h2 {
   }
   /*rc-slider end*/
 }
-@media only screen and (max-device-width: 770px) {
+@media only screen and (max-device-width: 667px) {
   .loanChart {
       display: none !important;
   }
