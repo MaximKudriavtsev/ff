@@ -33,7 +33,8 @@ export default class Home extends Component {
         <div className='home_intro' style={{height: height}}>
           <div className='home_intro_content'>
             <h1 className='home_intro_content_headline-slogan'>ФУНДАМЕНТ ВАШЕГО БЛАГОСОСТОЯНИЯ</h1>
-            <div className='home_intro_content_headline-text'>Сэкономленные деньги ни чуть не хуже заработанных!</div>
+            <div className='home_intro_content_headline-text'>Экономить легче, чем зарабатывать!
+              Попробуйте и убедитесь сами</div>
             <Link to='/loancalc'><button className='home_intro_content_headline-button'>Расчитать кредит</button></Link>
           </div>
         </div>
