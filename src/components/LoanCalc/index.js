@@ -24,7 +24,10 @@ export default class LoanCalc extends Component {
         </div>
         <div className='loanText-block'>
           <div className='loanText-block_text'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Выражаю благодарность!
+            Дизайн: Миндрин А.
+            Помощь в разработке: Кочетыгов А. Скобельцын С. Арефьева Е.
+            Отдельная благодарность: Индан А. Громова А. Шевчук О. Шалаева Т. Холопцева В. Васильева Т. Правдивец И. Морозов Д. Туголуков И. Дутов П. Наумкин М.
           </div>
         </div>
         <LoanChart />
