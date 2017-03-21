@@ -35,7 +35,7 @@ export default class Home extends Component {
             <h1 className='home_intro_content_headline-slogan'>ФУНДАМЕНТ ВАШЕГО БЛАГОСОСТОЯНИЯ</h1>
             <div className='home_intro_content_headline-text'>Экономить легче, чем зарабатывать!
               Попробуйте и убедитесь сами</div>
-            <Link to='/loancalc'><button className='home_intro_content_headline-button'>Расчитать кредит</button></Link>
+            <Link to='/loancalc'><button className='home_intro_content_headline-button'>Рассчитать кредит</button></Link>
           </div>
         </div>
         <div className='home_product-main'>

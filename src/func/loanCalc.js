@@ -45,7 +45,7 @@ export function annData(sum, rate, time) {
 
 //export arrey of month loan data
 export function diffData(sum, rate, time){
-    var monthDebt = sum/time,
+    var monthDebt = Math.round(sum/time*100)/100,
         balanceSum = sum,
         data =[],
         date = new Date();
@@ -60,7 +60,7 @@ export function diffData(sum, rate, time){
             monthSum : monthSum,
             monthRate : monthRate
         });
-        balanceSum -= monthDebt;
+        balanceSum = Math.round((balanceSum - monthDebt)*100)/100;
         date.setMonth(date.getMonth() +1 );
     }
     return (data)

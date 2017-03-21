@@ -10,7 +10,7 @@ class MenuMedia extends Component {
         this.props.userActions.menuOpen();
     }
     render() {
-        var styleNone = this.props.state.menu ? '' : 'none';
+        var styleNone = this.props.state.menu ? '_in' : '';
 
         return (
             <div>
@@ -25,10 +25,10 @@ class MenuMedia extends Component {
                     </div>
                 </header >
                 <div className={'menu-media_back' + styleNone}></div>
-                <div className={'menu-media_nav ' + styleNone}>
+                <div className={'menu-media_nav' + styleNone}>
                     <ul className='menu-media_nav_ul'>
                         <Link to='/'><li className='menu-media_nav_ul_li' onClick={::this.onButtonClick}>Главная</li></Link>
-                        <Link to='/loancalc'><li className='menu-media_nav_ul_li last' onClick={::this.onButtonClick}>Расчитать кредит</li></Link>
+                        <Link to='/loancalc'><li className='menu-media_nav_ul_li last' onClick={::this.onButtonClick}>Рассчитать кредит</li></Link>
                     </ul>
                 </div>
             </div >

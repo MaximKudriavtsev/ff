@@ -13,7 +13,7 @@ export default class App extends Component {
         <nav className='nav'>
           <ul className='header_nav'>
             <li><NavLink onlyActiveOnIndex={true} to='/'><div className='nav_text'>Главная</div></NavLink></li>
-            <li><NavLink to='/loancalc'><div className='nav_text'>Расчитать кредит</div></NavLink></li>
+            <li><NavLink to='/loancalc'><div className='nav_text'>Рассчитать кредит</div></NavLink></li>
           </ul>
         </nav>
         {this.props.children}

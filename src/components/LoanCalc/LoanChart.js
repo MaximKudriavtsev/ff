@@ -19,6 +19,7 @@ const CustomTooltip = React.createClass({
             return (
                 <div className="custom-tooltip">
                     <p className="label">{`${payload[0].payload.time}`}</p>
+                    <p className="introC">{`Платеж : ${(Math.round((payload[0].value+payload[1].value)*100)/100).toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`}</p>
                     <p className="introA">{`Долг : ${payload[0].value.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`}</p>
                     <p className="introB">{`Проценты : ${payload[1].value.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`}</p>
                 </div>

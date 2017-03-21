@@ -7,7 +7,7 @@ import * as loanActions from "../../actions/LoanActions"
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css';
 
-class LoanCalc extends Component {
+class LoanInput extends Component {
     onChange1(value) {
         this.props.loanActions.changeRate(value, 1, false);
     }
@@ -133,4 +133,4 @@ function mapDispatchToProps(dispatch) {
         loanActions: bindActionCreators(loanActions, dispatch)
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LoanCalc);
+export default connect(mapStateToProps, mapDispatchToProps)(LoanInput);

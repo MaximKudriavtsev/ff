@@ -1,0 +1,45 @@
+.loanMoreInput {
+
+}
+.loanMoreInput_button {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 20px;
+    color: #4b4b4b;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.loanMoreInput_main {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
+    transform: translateY(-100%);
+    transition: .4s;
+    -webkit-transform: translateY(-100%);
+    -webkit-transition: .4s;
+    -o-transform: translateY(-100%);
+    -o-transition: .4s;
+}
+.loanMoreInput_mainin {
+    opacity: 1;
+    visibility: visible;
+    height: 70px;/*350*/
+    padding: 35px;
+    transform: translateY(0);
+    transition: .4s;
+    -webkit-transform: translateY(0);
+    -webkit-transition: .4s;
+    -o-transform: translateY(0);
+    -o-transition: .4s;
+}
+
+.loanMoreInput_sliderForm {
+    display: none;
+}
+
+.loanMoreInput_sliderFormin {
+    padding: 0;
+    margin: 15px;
+    margin-bottom: 25px;
+}

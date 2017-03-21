@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import App from '../../containers/App'
 import LoanInput from './LoanInput'
+import LoanMoreInput from './LoanMoreInput'
 import LoanInfo from './LoanInfo'
 import LoanChart from './LoanChart'
 import LoanData from './LoanData'
@@ -19,6 +20,7 @@ export default class LoanCalc extends Component {
           <h2 className='h2-loan'>ИНФОРМАЦИЯ ПО КРЕДИТУ</h2>
           <LoanInput />
           <LoanInfo />
+          <LoanMoreInput />
         </div>
         <div className='loanText-block'>
           <div className='loanText-block_text'>

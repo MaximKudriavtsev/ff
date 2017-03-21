@@ -17,3 +17,10 @@ export function changeData(data) {
 export function changeChart() {
     return { type: 'CHANGE_CHART' }
 }
+
+export function changeType(num) {
+    return {
+        type: 'CHANGE_TYPE',
+        number: num
+    }
+}

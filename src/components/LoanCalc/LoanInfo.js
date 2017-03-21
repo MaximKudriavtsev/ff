@@ -18,7 +18,7 @@ class LoanInfo extends Component {
         }
         allSum = Math.round(allSum*100)/100;
         overPay = Math.round((allSum - loanSum)*100)/100;
-        overRate = Math.round((overPay / loanSum * 100)*100)/100;
+        overRate = Math.round((overPay / loanSum * 100)*1000)/1000;
 
         return (
             <div className='loanInfo'>
