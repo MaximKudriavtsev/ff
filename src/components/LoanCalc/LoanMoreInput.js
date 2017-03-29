@@ -53,8 +53,6 @@ class LoanMoreInput extends Component {
         this.props.userActions.changeMoreInput();
     }
     onTypeChange(e) {
-        console.log(e.target.value);
-        console.log(this.props);
         this.props.loanActions.changeType(e.target.value*1);
     }
 
@@ -65,6 +63,7 @@ class LoanMoreInput extends Component {
         switch(this.props.state.loanType) {
             case 0: {defVal='0'; break;}
             case 1: {defVal='1'; break;}
+            case 2: {defVal='2'; break;}
             default: break;
         }
 
@@ -82,6 +81,7 @@ class LoanMoreInput extends Component {
                             defaultValue={defVal}>
                             <option value='0'>Аннуитетный</option>
                             <option value='1'>Дифференцированный</option>
+                            <option value='2'>Свободный</option>
                         </select>
                     </div>
                 </div>

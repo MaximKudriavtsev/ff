@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import App from '../../containers/App'
+import FreeTemplate from '../../containers/FreeTemplate'
 import LoanInput from './LoanInput'
 import LoanMoreInput from './LoanMoreInput'
 import LoanInfo from './LoanInfo'
@@ -24,15 +25,16 @@ export default class LoanCalc extends Component {
         </div>
         <div className='loanText-block'>
           <div className='loanText-block_text'>
-            Выражаю благодарность!
-            Дизайн: Миндрин А.
-            Помощь в разработке: Кочетыгов А. Скобельцын С. Арефьева Е.
-            Отдельная благодарность: Индан А. Громова А. Шевчук О. Шалаева Т. Холопцева В. Васильева Т. Правдивец И. Морозов Д. Туголуков И. Дутов П. Наумкин М.
-            Психологическая поддержка: мамуля, бабуля, дедуля, Ируля ♥
+            <p>Выражаю благодарность!</p>
+            <p>Дизайн: Миндрин А.</p>
+            <p>Помощь в разработке: Рыженкова Т. Арефьева Е. Кочетыгов А. Скобельцын С. Гаев А.</p>
+            <p>Отдельная благодарность: Индан А. Громова А. Шевчук О. Шалаева Т. Холопцева В. Васильева Т. Правдивец И. Морозов Д. Туголуков И. Дутов П. Наумкин М.</p>
+            <p>Психологическая поддержка: мамуля, бабуля, дедуля, Ируля, Сонюля ♥</p>
           </div>
         </div>
         <LoanChart />
         <LoanData />
+        <FreeTemplate />
         <Footer />
       </div>
     )

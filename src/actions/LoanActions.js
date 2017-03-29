@@ -24,3 +24,12 @@ export function changeType(num) {
         number: num
     }
 }
+
+export function  changeFreeData(id, val, sh) {
+    return {
+        type: 'CHANGE_FREE_DATA',
+        index: id,
+        value: val,
+        show : sh
+    }
+}

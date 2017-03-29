@@ -3,19 +3,19 @@ import { connect } from 'react-redux'
 
 class LoanData extends Component {
     callPrint() {
-        var WinPrint = window.open('',"_blank"),
+        var WinPrint = window.open('', "_blank"),
             loanCalcProps = this.props.loanCalculator,
             data = loanCalcProps.loanData,
             allSum = 0, overPay = 0, overRate = 0;
 
-            //function conv() {toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')};
+        //function conv() {toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')};
 
         for (let item in data) {
             allSum += data[item].monthSum;
         }
-        allSum = Math.round(allSum*100)/100;
-        overPay = Math.round((allSum - loanCalcProps.loanSum)*100)/100;
-        overRate = Math.round((overPay / loanCalcProps.loanSum * 100)*100)/100;
+        allSum = Math.round(allSum * 100) / 100;
+        overPay = Math.round((allSum - loanCalcProps.loanSum) * 100) / 100;
+        overRate = Math.round((overPay / loanCalcProps.loanSum * 100) * 100) / 100;
 
         document.write('<style> td { color: #F40 } </style>');
 
@@ -24,12 +24,12 @@ class LoanData extends Component {
 
         WinPrint.document.write("<span>Finance-Foundation.ru</span>");
         WinPrint.document.write('<table id="print1">');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Сумма кредита</td><td style="border-bottom: 1px solid black; text-align: right">'+loanCalcProps.loanSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+' руб.</td></tr>');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Срок кредитования</td><td style="border-bottom: 1px solid black; text-align: right">'+loanCalcProps.loanTime+' мес.</td></tr>');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Процентная ставка</td><td style="border-bottom: 1px solid black; text-align: right">'+loanCalcProps.loanRate+' %</td></tr>');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Общая сумма выплат</td><td style="border-bottom: 1px solid black; text-align: right">'+allSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+' руб.</td></tr>');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Общая переплата</td><td style="border-bottom: 1px solid black; text-align: right">'+overPay.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+' руб.</td></tr>');
-        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Процент переплаты</td><td style="border-bottom: 1px solid black; text-align: right">'+overRate+' %.</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Сумма кредита</td><td style="border-bottom: 1px solid black; text-align: right">' + loanCalcProps.loanSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Срок кредитования</td><td style="border-bottom: 1px solid black; text-align: right">' + loanCalcProps.loanTime + ' мес.</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Процентная ставка</td><td style="border-bottom: 1px solid black; text-align: right">' + loanCalcProps.loanRate + ' %</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Общая сумма выплат</td><td style="border-bottom: 1px solid black; text-align: right">' + allSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Общая переплата</td><td style="border-bottom: 1px solid black; text-align: right">' + overPay.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.</td></tr>');
+        WinPrint.document.write('<tr><td style="border-bottom: 1px solid black">Процент переплаты</td><td style="border-bottom: 1px solid black; text-align: right">' + overRate + ' %.</td></tr>');
         WinPrint.document.write('</table>');
 
         WinPrint.document.write('<table id="print">');
@@ -43,16 +43,16 @@ class LoanData extends Component {
 
         for (var item in data) {
             WinPrint.document.writeln();
-            WinPrint.document.write('<tr><td>'+data[item].time+'</td>');
-            WinPrint.document.write('<td>'+data[item].balanceSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+'</td>');
-            WinPrint.document.write('<td>'+data[item].monthRate.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+'</td>');
-            WinPrint.document.write('<td>'+data[item].monthDebt.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+'</td>');
-            WinPrint.document.write('<td>'+data[item].monthSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+'</td></tr>');
+            WinPrint.document.write('<tr><td>' + data[item].time + '</td>');
+            WinPrint.document.write('<td>' + data[item].balanceSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '</td>');
+            WinPrint.document.write('<td>' + data[item].monthRate.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '</td>');
+            WinPrint.document.write('<td>' + data[item].monthDebt.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '</td>');
+            WinPrint.document.write('<td>' + data[item].monthSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '</td></tr>');
         }
         WinPrint.document.write('</tbody></table>');
-        WinPrint.document.close(); 
-        WinPrint.focus(); 
-        WinPrint.print(); 
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
         WinPrint.close();
     }
 
@@ -63,10 +63,11 @@ class LoanData extends Component {
             data = loanCalcProps.loanData,
             classWhite = 'white',
             classBlack = 'black',
-            className;
+            className, classNone = '';
 
-        template = data.map(function (item, index) {
-                (index%2==0) ? className = classBlack : className = classWhite;
+        if (loanCalcProps.loanType < 2) {
+            template = data.map(function (item, index) {
+                (index % 2 == 0) ? className = classBlack : className = classWhite;
                 return (
                     <tr key={index}>
                         <td className={className}>{item.time}</td>
@@ -77,11 +78,14 @@ class LoanData extends Component {
                     </tr>
                 )
             });
+        } else {
+            classNone = 'none'
+        }
         return (
-            <div className='loanData'>
+            <div className={'loanData ' + classNone}>
                 <h2 className='h2-loan'>ТАБЛИЦА ПЛАТЕЖЕЙ</h2>
                 <div className='loanData_block'>
-                    <a className='loanData_header_print' onClick = {:: that.callPrint} title="Распечатать график платежей"></a>
+                    <a className='loanData_header_print' onClick={:: that.callPrint} title="Распечатать график платежей"></a>
                 <table className='loanData_table'>
                     <tbody >
                         <tr className='loanData_table_head'>
@@ -94,8 +98,8 @@ class LoanData extends Component {
                         {template}
                     </tbody>
                 </table>
-                </div>
             </div>
+            </div >
         )
     }
 }
