@@ -33,7 +33,7 @@ class FreeTemplate extends Component {
                     <tbody >
                         <tr className='loanData_table_head'>
                             <td className='loanData_table_header'>Месяц</td>
-                            <td className='loanData_table_header'>Ежемесячный платеж</td>
+                            <td className='loanData_table_header'>Желаемый ежемесячный платеж</td>
                         </tr>
                         {template}
                     </tbody>

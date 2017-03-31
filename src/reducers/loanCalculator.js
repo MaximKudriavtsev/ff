@@ -23,17 +23,17 @@ export default function main(state = initialState, action) {
                 }
                 switch (action.number) {
                     case 1: {
-                        return { ...state, loanSum: action.value, loanData: func(action.value, state.loanRate / 100, state.loanTime, []), chart: action.chart }
+                        return { ...state, loanSum: action.value, loanData: func(action.value, state.loanRate / 100, state.loanTime, state.loanData), chart: action.chart }
                     }
                     case 2: {
-                        return { ...state, loanTime: action.value, loanData: func(state.loanSum, state.loanRate / 100, action.value, state.loanData), chart: action.chart }
+                        return { ...state, loanTime: action.value, loanData: func(state.loanSum, state.loanRate / 100, action.value, []), chart: action.chart }
                     }
                     case 3: {
                         return { ...state, loanRate: action.value, loanData: func(state.loanSum, action.value / 100, state.loanTime, state.loanData), chart: action.chart }
                     }
-                    case 4: {
+                    /*case 4: {
                         return { ...state, loanType: action.value, loanData: func(state.loanSum, state.loanRate / 100, state.loanTime, state.loanData), chart: action.chart }
-                    }
+                    }*/
                     default:
                         return state
                 }

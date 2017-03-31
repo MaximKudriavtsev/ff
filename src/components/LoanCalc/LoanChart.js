@@ -42,7 +42,7 @@ const CustomTooltipFree = React.createClass({
             return (
                 <div className="custom-tooltip">
                     <p className="label">{`${payload[0].payload.time}`}</p>
-                    <p className="introC">{`Платеж : ${(Math.round((payload[0].value) * 100) / 100).toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`}</p>
+                    <p className="introC">{`Платеж : ${(Math.round((payload[0].value + payload[1].value) * 100) / 100).toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`}</p>
                 </div>
             );
         }
@@ -78,7 +78,7 @@ class LoanChart extends Component {
             loanData,
             chartProp = that.chartProperty(document.documentElement.clientWidth);
 
-        that.props.loanCalculator.chart ? loanData = that.props.loanCalculator.loanData : null;
+        that.props.loanCalculator.chart ? loanData = that.props.loanCalculator.loanData : loanData = [];
         if (that.props.loanCalculator.loanType < 2) {
             return (
                 <div className='loanChart' id='loanChart'>
@@ -96,16 +96,25 @@ class LoanChart extends Component {
                 </div>
             )
         } else {
+            var data = [];
+            loanData.forEach(function(item) {
+                data.push({
+                    time : item.time,
+                    monthSumFalse : item.show ? 0 : item.monthSum,
+                    monthSumTrue : item.show ? item.monthSum : 0
+                });
+            });
             return (
                 <div className='loanChart' id='loanChart'>
                     <h2 className='h2-loan'>СООТНОШЕНИЕ ПРОЦЕНТОВ И ОСНОВНОГО ДОЛГА В ЕЖЕМЕСЯЧНЫХ ПЛАТЕЖАХ</h2>
                     <div className='loanChart_chartBox'>
-                        <BarChart width={chartProp.width} height={chartProp.height} data={loanData}
+                        <BarChart width={chartProp.width} height={chartProp.height} data={data}
                             margin={{ top: 10, right: 30, left: 0, bottom: 20 }}>
                             <XAxis dataKey="time" />
                             <YAxis />
                             <Tooltip content={<CustomTooltipFree />} />
-                            <Bar dataKey="monthSum" stackId="a" fill="#5CCCCC" isAnimationActive={true} />
+                            <Bar dataKey="monthSumFalse" stackId="a" fill="#5CCCCC" isAnimationActive={true} />
+                            <Bar dataKey="monthSumTrue" stackId="a" fill="#FF7D7D" isAnimationActive={true} />
                         </BarChart>
                     </div>
                 </div>
