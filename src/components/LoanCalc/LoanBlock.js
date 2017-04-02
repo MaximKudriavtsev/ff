@@ -6,8 +6,18 @@ import * as loanActions from "../../actions/LoanActions"
 
 class LoanBlock extends Component {
     onInputChange(e) {
-        this.props.loanActions.changeFreeData(this.props.index, e.target.value * 1, true);
+        var show;
+        (e.target.value==='') ? show = false : show = true ;
+        this.props.loanActions.changeFreeData(this.props.index, e.target.value, show);
     }
+    componentWillUnmount() {
+        //console.log('willUnmount');
+    }
+    shouldComponentUpdate() {
+        //console.log('shouldComponentUpdate');
+        return true;
+    }
+
     render() {
         var item = this.props.data,
             className,

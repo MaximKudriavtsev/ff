@@ -8,12 +8,19 @@ class LoanInfo extends Component {
             loanTime = loanCulcProps.loanTime,
             loanData = loanCulcProps.loanData,
             allSum = 0,
-            overPay,
-            overRate;
+            overPay, overRate, maxSum=0, minSum=9999999;
 
 /*По-хорошему вся логика должна быть спрятана и передаваться уже готовыми
 объектами*/
         for (var item in loanData) {
+            debugger;
+            let monthSum = loanData[item].monthSum;
+
+            if(monthSum > maxSum)
+                maxSum = monthSum;
+            if(monthSum < minSum)
+                minSum = monthSum;
+
             allSum += loanData[item].monthSum;
         }
         allSum = Math.round(allSum*100)/100;
@@ -35,7 +42,10 @@ class LoanInfo extends Component {
                             </tr>
                             <tr className='loanInfo_tr'>
                                 <td className='loanInfo_td'>Ежемесячный платеж:</td>
-                                <td className='loanInfo_td colorRed'>{loanData[0].monthSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} руб.</td>
+                                <td className='loanInfo_td colorRed'>
+                                    {maxSum != minSum ? minSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' ... ' : null}
+                                    {maxSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} руб.
+                                    </td>
                             </tr>
                             <tr className='loanInfo_tr'>
                                 <td className='loanInfo_td'>Общая сумма выплат:</td>

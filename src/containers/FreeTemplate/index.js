@@ -7,6 +7,11 @@ import * as loanActions from "../../actions/LoanActions"
 import LoanBlock from '../../components/LoanCalc/LoanBlock'
 
 class FreeTemplate extends Component {
+    shouldComponentUpdate() {
+        //console.log('shouldComponentUpdate');
+        return true;
+    }
+
     render() {
         var that = this,
             data = that.props.state.loanData || [],

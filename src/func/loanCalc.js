@@ -72,7 +72,9 @@ export function freeData(sum, rate, time, loanData) {
         onePlusRate = 1 + rate,
         date = new Date(), i;
 
-    if (loanData.length == 0 || loanData.length != time) {
+    debugger;
+    //first start with length = 0
+    if (loanData.length == 0/* || loanData.length != time*/) {
         loanData = [];
         for (i = 0; i < time; i++) {
             loanData.push({
@@ -83,13 +85,34 @@ export function freeData(sum, rate, time, loanData) {
         }
         monthSum = Math.round(((sum - whiteSum) / blackSum) * 100) / 100;
     } else {
-        for (i = 0; i < time; i++) {
-            if (loanData[i].show)
-                whiteSum += loanData[i].monthSum / Math.pow(onePlusRate, (i + 1) / 12);
-            else
-                blackSum += 1 / Math.pow(onePlusRate, (i + 1) / 12);
+        //new
+        //if length != time
+        if (loanData.length != time) {
+            var loanData2 = [];
+            for (i = 0; i < time; i++) {
+                var isData = loanData[i];
+                loanData2.push({
+                    monthSum: isData ? isData.monthSum : 0,
+                    show: isData ? isData.show : false
+                });
+                if (loanData2[i].show)
+                    whiteSum += loanData2[i].monthSum / Math.pow(onePlusRate, (i + 1) / 12);
+                else
+                    blackSum += 1 / Math.pow(onePlusRate, (i + 1) / 12);
+            }
+            monthSum = Math.round(((sum - whiteSum) / blackSum) * 100) / 100;
+            loanData = loanData2;
+        } else {
+            // new end
+            //if length == time, refresh monthSum
+            for (i = 0; i < time; i++) {
+                if (loanData[i].show)
+                    whiteSum += loanData[i].monthSum / Math.pow(onePlusRate, (i + 1) / 12);
+                else
+                    blackSum += 1 / Math.pow(onePlusRate, (i + 1) / 12);
+            }
+            monthSum = Math.round(((sum - whiteSum) / blackSum) * 100) / 100;
         }
-        monthSum = Math.round(((sum - whiteSum) / blackSum) * 100) / 100;
     }
 
     for (i = 0; i < time; i++) {
@@ -97,7 +120,7 @@ export function freeData(sum, rate, time, loanData) {
 
         data.push({
             time: month[date.getMonth()] + ' ' + date.getFullYear(),
-            monthSum: isShow ? loanData[i].monthSum : monthSum,
+            monthSum: isShow ? loanData[i].monthSum * 1 : monthSum,
             show: isShow
         });
         date.setMonth(date.getMonth() + 1);
