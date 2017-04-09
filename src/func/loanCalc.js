@@ -72,7 +72,6 @@ export function freeData(sum, rate, time, loanData) {
         onePlusRate = 1 + rate,
         date = new Date(), i;
 
-    debugger;
     //first start with length = 0
     if (loanData.length == 0/* || loanData.length != time*/) {
         loanData = [];

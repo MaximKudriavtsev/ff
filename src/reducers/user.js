@@ -1,6 +1,6 @@
 const initialState = {
     menu: false,
-    moreInput: false
+    moreInput: true
 };
 
 export default function userstate(state = initialState, action) {

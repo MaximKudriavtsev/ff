@@ -9,7 +9,7 @@ import LoanChart from './LoanChart'
 import LoanData from './LoanData'
 import Footer from '../Footer'
 import MenuMedia from '../../components/MenuMedia'
-
+import LoanText from './LoanText'
 
 export default class LoanCalc extends Component {
   render() {
@@ -23,15 +23,7 @@ export default class LoanCalc extends Component {
           <LoanInfo />
           <LoanMoreInput />
         </div>
-        <div className='loanText-block'>
-          <div className='loanText-block_text'>
-            <p>Выражаю благодарность!</p>
-            <p>Дизайн: Миндрин А.</p>
-            <p>Помощь в разработке: Рыженкова Т. Арефьева Е. Кочетыгов А. Скобельцын С. Гаев А.</p>
-            <p>Отдельная благодарность: Индан А. Громова А. Шевчук О. Шалаева Т. Холопцева В. Васильева Т. Правдивец И. Морозов Д. Туголуков И. Дутов П. Наумкин М.</p>
-            <p>Психологическая поддержка: мамуля, бабуля, дедуля, Ируля, Сонюля ♥</p>
-          </div>
-        </div>
+        <LoanText />
         <LoanChart />
         <LoanData />
         <FreeTemplate />

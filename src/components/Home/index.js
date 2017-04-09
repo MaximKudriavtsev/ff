@@ -32,9 +32,10 @@ export default class Home extends Component {
         <MenuMedia />
         <div className='home_intro' style={{height: height}}>
           <div className='home_intro_content'>
-            <h1 className='home_intro_content_headline-slogan'>ФУНДАМЕНТ ВАШЕГО БЛАГОСОСТОЯНИЯ</h1>
-            <div className='home_intro_content_headline-text'>Экономить легче, чем зарабатывать!
-              Попробуйте и убедитесь сами</div>
+            <h1 className='home_intro_content_headline-slogan'>Кредитный калькулятор</h1>
+            <div className='home_intro_content_headline-text'>Гибкая задача кредитных параметров, быстрый рассчет платежей и формирование наглядной таблицы выплат.
+              <p>Просто и удобно!</p>
+            </div>
             <Link to='/loancalc'><button className='home_intro_content_headline-button'>Рассчитать кредит</button></Link>
           </div>
         </div>

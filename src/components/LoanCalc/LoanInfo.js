@@ -13,7 +13,6 @@ class LoanInfo extends Component {
 /*По-хорошему вся логика должна быть спрятана и передаваться уже готовыми
 объектами*/
         for (var item in loanData) {
-            debugger;
             let monthSum = loanData[item].monthSum;
 
             if(monthSum > maxSum)

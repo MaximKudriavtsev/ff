@@ -50,7 +50,7 @@ import './LoanMoreInput.css'
 
 class LoanMoreInput extends Component {
     onMoreInputClick() {
-        this.props.userActions.changeMoreInput();
+        //this.props.userActions.changeMoreInput();
     }
     onTypeChange(e) {
         this.props.loanActions.changeType(e.target.value*1);
