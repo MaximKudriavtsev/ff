@@ -29,9 +29,9 @@ class LoanBlock extends Component {
 
         return <tr>
             <td className={className}>{item.time}</td>
-            <td className={className}>
+            <td className={className + ' td-free'}>
                 <input
-                    className='loanInput_sliderForm_textForm_input'
+                    className='loanInput_sliderForm_textForm_input free'
                     placeholder={item.monthSum.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}
                     type='number'
                     onChange={::this.onInputChange}

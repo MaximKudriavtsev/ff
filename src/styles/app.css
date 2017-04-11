@@ -705,6 +705,12 @@ td {
   .il-3 {background-image: url(../images/graphic-opacity-small.png) !important;}
   .il-4 {background-image: url(../images/list-small.png) !important;}
 }
+.free {
+        width: 300px !important;
+  }
+  .td-free {
+        padding-right: 16% !important;
+  }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .h2-loan {
@@ -740,6 +746,12 @@ td {
       width: 250px !important;
       height: 250px !important;
       margin-top: 110px !important;
+  }
+  .free {
+        width: 260px !important;
+  }
+  .td-free {
+        padding-right: 10% !important;
   }
 }
 @media screen and (min-width: 990px) and (max-width: 1200px) {
@@ -779,6 +791,12 @@ td {
       width: 210px !important;
       height: 210px !important;
       margin-top: 109px !important;
+  }
+  .free {
+        width: 260px !important;
+  }
+  .td-free {
+        padding-right: 10% !important;
   }
 }
 @media screen and (min-width: 770px) and (max-width: 990px) {
@@ -827,6 +845,12 @@ td {
       width: 200px !important;
       height: 200px !important;
       margin-top: 90px !important;
+  }
+  .free {
+        width: 260px !important;
+  }
+  .td-free {
+        padding-right: 10% !important;
   }
 }
 @media screen and (max-width: 770px) {
@@ -883,6 +907,12 @@ td {
       display: none;
   }
   .home_intro {background-image: url(../images/main_770.jpg);}
+  .free {
+        width: 120px !important;
+  }
+  .td-free {
+        padding-right: 10% !important;
+  }
   /*rc-slider spetial for 770 start*/
   .rc-slider {
       height: 30px !important;
@@ -1039,6 +1069,12 @@ td {
     .loanData_table {
       font-size: 13px !important;
     }
+    .free {
+        width: 120px !important;
+    }
+    .td-free {
+        padding-right: 10% !important;
+    }
 }
 @media screen and (max-width: 375px) {
     /*home*/
@@ -1120,6 +1156,13 @@ td {
         font-size: 13px !important;
         padding-top: 22px;
     }
+    .free {
+        font-size: 12px;
+        width: 110px !important;
+    }
+    .td-free {
+        padding-right: 10% !important;
+    }
 }
 @media screen and (max-width: 320px) {
     /*home*/
@@ -1200,5 +1243,12 @@ td {
     .home_footer_content-right {
         font-size: 13px !important;
         padding-top: 22px;
+    }
+    .free {
+        font-size: 12px;
+        width: 110px !important;
+    }
+    .td-free {
+        padding-right: 10% !important;
     }
 }

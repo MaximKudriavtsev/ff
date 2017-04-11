@@ -33,7 +33,7 @@ export default class Home extends Component {
         <div className='home_intro' style={{height: height}}>
           <div className='home_intro_content'>
             <h1 className='home_intro_content_headline-slogan'>Кредитный калькулятор</h1>
-            <div className='home_intro_content_headline-text'>Гибкая задача кредитных параметров, быстрый рассчет платежей и формирование наглядной таблицы выплат.
+            <div className='home_intro_content_headline-text'>Гибкая задача кредитных параметров, быстрый расчёт платежей и формирование наглядной таблицы выплат.
               <p>Просто и удобно!</p>
             </div>
             <Link to='/loancalc'><button className='home_intro_content_headline-button'>Рассчитать кредит</button></Link>
@@ -46,9 +46,9 @@ export default class Home extends Component {
             </div>
             <div className="home_product-main_product_text">
               <div className="text-block-right">
-                <h2>ПРОСТОЙ ВВОД ДЛЯ БЫСТРОГО РАСЧЕТА КРЕДИТА</h2>
+                <h2>ПРОСТОЙ ВВОД ДЛЯ БЫСТРОГО РАСЧЁТА КРЕДИТА</h2>
                 <div className='home_product-main_product_text_il il-1'></div>
-                <div className="text-info">Всего три ключевых параметра для расчета Вашего кредита.</div>
+                <div className="text-info">Всего три ключевых параметра для расчёта Вашего кредита.</div>
               </div>
             </div>
           </div>
